@@ -1,0 +1,18 @@
+name: Qodana
+on:
+  push:
+    branches:
+      - master
+      - 'releases/*'
+
+jobs:
+  qodana:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: 'Qodana Scan'
+        env:
+          QODANA_TOKEN: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdhbml6YXRpb24iOiIzWDZ4OSIsInByb2plY3QiOiJwNXZrYSIsInRva2VuIjoicDQwOGQifQ.CTzf-cWUj0zx9m1BWN3Db0f0nLUSym46CsCYRscnj5A'
+        uses: JetBrains/qodana-action@v2022.3.4
