@@ -7,7 +7,9 @@ namespace coresearch
     public static class Program
     {
         private static int _filesCount = 0;
+
         private static Coresearch _coresearch;
+
         private static readonly string _prompt = "> ";
 
         private static void LoadFromSource(string path, string extension)
